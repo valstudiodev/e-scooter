@@ -1,0 +1,257 @@
+@use "sass:math";
+@use './settings/settings' as *;
+@use './settings/_mixins.scss' as *;
+
+.components {
+
+   // .components__container
+   &__container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: toRem(50);
+      padding-top: toRem(50);
+   }
+
+   // .components__item
+   &__item {}
+}
+
+
+// ===========================================================================================
+// -----------------------------
+// Buttons-active
+// -----------------------------
+.icon-menu {
+   position: relative;
+   width: toRem(30);
+   height: toRem(20);
+   z-index: 10;
+   flex-shrink: 0;
+
+   &::before,
+   &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: toRem(3);
+      border-radius: toRem(10);
+      background-color: $colorPrimiry;
+      transition: all 0.3s;
+   }
+
+   &::before {
+      top: 0;
+   }
+
+   &::after {
+      bottom: 0;
+   }
+
+   span {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      translate: 0 -50%;
+      background-color: $colorPrimiry;
+      width: 70%;
+      height: toRem(3);
+      border-radius: toRem(10);
+      transition: all 0.3s;
+   }
+
+   @media (min-width: toEm(595)) {
+      display: none;
+   }
+}
+
+.menu-open {
+   .icon-menu {
+      &::before {
+         top: 50%;
+         rotate: 45deg;
+         translate: 0 -50%;
+      }
+
+      &::after {
+         top: 50%;
+         rotate: -45deg;
+         translate: 0 -50%;
+      }
+
+      span {
+         width: 0;
+      }
+   }
+}
+
+// ===========================================================================================
+// -----------------------------
+// Buttons
+// -----------------------------
+.button-active {
+   background-color: $colorPrimiry;
+   text-transform: uppercase;
+   font-size: toRem(14);
+   @include adaptiveValue('padding-inline',26,10);
+   padding-block: toRem(16);
+   border-radius: toRem(4);
+   color: $colorWhite;
+   transition: all 0.3s;
+   border: toRem(1) solid $colorPrimiry;
+   line-height: 1.06;
+
+   &--login {
+      position: relative;
+      background-color: transparent;
+      border: toRem(1) solid $white;
+      color: $colorPrimiry;
+      @media (any-hover: hover) and (any-pointer: fine) {
+        &:hover {
+         text-decoration: underline;
+        }
+      }
+   }
+
+   @media (any-hover: hover) and (any-pointer: fine) {
+     &:hover {
+      background-color: transparent;
+      color: $colorPrimiry;
+     }
+   }
+}
+
+.button {
+   border: toRem(2) solid $colorPrimiry;
+   @include adaptiveValue('font-size',30,20);
+   font-weight: 700;
+   padding-block: toRem(29);
+   background-color: transparent;
+   line-height: 1.2;
+   border-radius: toRem(10);
+   transition: all 0.3s;
+
+   @media (any-hover: hover) and (any-pointer: fine) {
+     &:hover {
+      background-color: $colorPrimiry;
+      color: $white;
+     }
+   }
+
+   &--more {
+      @include adaptiveValue('padding-inline', 64, 30);
+   }
+
+   &--battery {
+      @include adaptiveValue('padding-inline',174,30);
+   }
+
+   &--spare {
+      @include adaptiveValue('padding-inline', 147, 30);
+   }
+
+   &--charging {
+      @include adaptiveValue('padding-inline', 121, 30);
+   }
+}
+
+.buttom-arrow  {
+   border: toRem(1) solid $colorPrimiry;
+   border-radius: 50%;
+   padding-block: toRem(17);
+   padding-inline: toRem(14);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: toRem(42);
+   height: toRem(42);
+   transition: all 0.3s;
+
+   &::before {
+      font-size: toRem(10);
+   }
+
+   &--right {
+      rotate: 180deg;
+   }
+
+   @media (any-hover: hover) and (any-pointer: fine) {
+     &:hover {
+       background-color: $colorPrimiry;
+       color: $white;
+     }
+   }
+}
+
+.button-buy {
+   color: $colorDark;
+   @include adaptiveValue('font-size',20,18);
+   font-weight: 500;
+   display: flex;
+   align-items: center;
+   gap: toRem(26);
+   transition: all 0.3s;
+   padding-right: toRem(10);
+
+   &::before {
+      background-color: $colorPrimiry;
+      color: $white;
+      padding-block: toRem(24);
+      padding-inline: toRem(17);
+      font-size: toRem(10);
+      transition: all 0.3s;
+   }
+
+   @media (any-hover: hover) and (any-pointer: fine) {
+     &:hover {
+       background-color: rgba(211, 211, 211, 0.74);
+       &::before {
+         background-color: rgb(29, 31, 34);
+         animation: arrowMove 0.6s ease-in-out infinite;
+       }
+     }
+   }
+}
+
+.button-play {
+   display: flex;
+   align-items: center;
+   gap: toRem(15);
+
+   // .button-play__text
+   &__text {
+      max-width: toRem(87);
+      @include adaptiveValue('font-size',18,14);
+      font-weight: 500;
+      text-align: left;
+   }
+
+   &__icon {
+      width: toRem(80);
+      aspect-ratio: 1;
+   }
+}
+
+// ===========================================================================================
+// -----------------------------
+// Block
+// -----------------------------
+.block-header {
+   display: flex;
+   flex-direction: column;
+   @include adaptiveValue('gap',34,20);
+   align-items: center;
+   // .block-header__title
+   &__title {
+      @include adaptiveValue('font-size',50,30);
+      font-weight: 700;
+   }
+
+   // .block-header__text
+   &__text {
+      @include adaptiveValue('font-size', 20, 16);
+      max-width: toRem(684);
+   }
+}

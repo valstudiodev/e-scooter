@@ -1,0 +1,102 @@
+@use '../settings/settings' as *;
+@use '../settings/mixins' as *;
+
+
+// ===========================================================================================
+// -----------------------------
+// Page
+// -----------------------------
+.page {
+
+   // .page__hero
+   &__hero {
+      @include adaptiveValue('padding-block',80,40);
+   }
+}
+
+
+// ===========================================================================================
+// -----------------------------
+// hero
+// -----------------------------
+.hero {
+
+   // .hero__container
+   &__container {}
+
+   // .hero__inner
+   &__inner {
+      display: flex;
+      gap: toRem(20);
+
+      @media (max-width: toEm(685)) {
+        flex-direction: column;
+        gap: toRem(20);
+      }
+   }
+
+   // .hero__content
+   &__content {
+      flex: 1 1 45%;
+      @include adaptiveValue('padding-block',50,20);
+   }
+
+   // .hero__image
+   &__image {
+      flex: 1 1 55%;
+      aspect-ratio: 855 / 646;
+
+      img {
+         width: 100%;
+         height: 100%;
+         object-fit: contain;
+      }
+   }
+}
+
+.content-hero {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   @include adaptiveValue('gap',62,20);
+   // .content-hero__title
+   &__title {
+      position: relative;
+      @include adaptiveValue('font-size',90,45);
+      font-weight: 300;
+      max-width: toRem(586);
+      text-transform: uppercase;
+      line-height: 105.555556%; /* 95/90 */
+      @include adaptiveValue('padding-bottom',93,20);
+      span {
+         font-weight: 700;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: $colorPrimiry;
+        height: toRem(4);
+        width: 60%;
+      }
+   }
+
+   // .content-hero__text
+   &__text {
+      // @include adaptiveValue('padding-top',62,20);
+      max-width: toRem(353);
+      @include adaptiveValue('font-size',22,18);
+      line-height: 154.545455%; /* 34/22 */
+   }
+
+   // .content-hero__buttons
+   &__buttons {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      @include adaptiveValue('gap',80,30);
+   }
+}
+
