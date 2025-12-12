@@ -247,11 +247,13 @@
    &__title {
       @include adaptiveValue('font-size',50,30);
       font-weight: 700;
+      text-align: center;
    }
 
    // .block-header__text
    &__text {
       @include adaptiveValue('font-size', 20, 16);
       max-width: toRem(684);
+      text-align: center;
    }
 }
