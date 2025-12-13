@@ -527,11 +527,17 @@
 .options-colors {
    display: grid;
    grid-template-columns: repeat(auto-fill,minmax(min(toRem(200),100%),1fr));
-   @include adaptiveValue('gap',95,30);
+   @include adaptiveValue('gap',95,20);
    translate: 0 toRem(-100);
 
    @media (max-width: toEm(1114)) {
      translate: 0 0;
+   }
+   @media (max-width: toEm(469)) {
+     display: flex;
+     overflow: auto;
+     margin-inline: toRem(-15);
+     padding-inline: toRem(15);
    }
 
    &__item {
@@ -540,6 +546,7 @@
       box-shadow: 0px 15px 70px 0px rgba(162, 169, 192, 0.2);
       border-radius: toRem(10);
       overflow: hidden;
+      flex-shrink: 0;
    }
 
    &__image {

@@ -97,14 +97,13 @@ address {
   padding-block: 1.6875rem;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-  background-color: lightgray;
 }
 .header::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #DBDBDB;
+  background-color: #fff;
   backdrop-filter: blur(10px);
   width: 100%;
   height: 100%;
@@ -1361,17 +1360,27 @@ address {
 }
 @media (min-width: 20em) and (max-width: 85.625em) {
   .options-colors {
-    gap: clamp( 30px , 10.1904761905px  +  6.1904761905vw , 95px );
+    gap: clamp( 20px , -2.8571428571px  +  7.1428571429vw , 95px );
   }
 }
 @media (max-width: 20em) {
   .options-colors {
-    gap: 30px;
+    gap: 20px;
   }
 }
 @media (max-width: 69.625em) {
   .options-colors {
     translate: 0 0;
+  }
+}
+@media (max-width: 29.3125em) {
+  .options-colors {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    overflow: auto;
+    margin-inline: -0.9375rem;
+    padding-inline: 0.9375rem;
   }
 }
 .options-colors__item {
@@ -1381,6 +1390,8 @@ address {
           box-shadow: 0px 15px 70px 0px rgba(162, 169, 192, 0.2);
   border-radius: 0.625rem;
   overflow: hidden;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 .options-colors__image {
   -o-object-fit: cover;
