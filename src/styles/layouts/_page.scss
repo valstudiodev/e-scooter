@@ -8,7 +8,7 @@
 // -----------------------------
 .page {
 
-   // > *:not(.accsessories) {
+   // > *:not(.colors) {
    //    display: none;
    // }
 
@@ -38,6 +38,21 @@
    &__accsessories {
       @include adaptiveValue('padding-top', 65, 30);
       @include adaptiveValue('padding-bottom', 130, 30);
+   }
+
+   // .page__gallery
+   &__gallery {
+      @include adaptiveValue('padding-block', 65, 30);
+   }
+
+   // .page__colors
+   &__colors {
+      @include adaptiveValue('padding-block', 65, 30);
+   }
+
+   // .page__testimonials
+   &__testimonials {
+      @include adaptiveValue('padding-block', 80, 30);
    }
 }
 
@@ -418,3 +433,183 @@
       &--icon-i-check {}
    }
 }
+
+// ===========================================================================================
+// -----------------------------
+// gallery
+// -----------------------------
+.gallery {
+
+   // .gallery__container
+   &__container {}
+
+   // .gallery__header
+   &__header {
+      @include adaptiveValue('margin-bottom',112,30);
+   }
+
+   // .gallery__body
+   &__body {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(toRem(400), 100%), 1fr));
+      @include adaptiveValue('gap',74,30);
+   }
+}
+
+.column-gallery {
+   display: flex;
+   flex-direction: column;
+
+   &--left {
+      @include adaptiveValue('gap',55,30);
+      justify-content: flex-end;
+   }
+
+   &--right {
+      @include adaptiveValue('gap',96,30);
+   }
+
+   // .column-gallery__image
+   &__image {
+      position: relative;
+      aspect-ratio: 633 / 485;
+
+      img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+   }
+
+   // .column-gallery__label
+   &__label {
+      position: absolute;
+      top: percent(35,485);
+      left: percent(38,633);
+      @include adaptiveValue('font-size',30,16);
+      font-weight: 700;
+   }
+
+   // .column-gallery__buttons
+   &__buttons {
+      display: flex;
+      flex-direction: column;
+      // align-items: flex-start;
+      gap: toRem(27);
+   }
+}
+
+// ===========================================================================================
+// -----------------------------
+// colors
+// -----------------------------
+.colors {
+
+   // .colors__container
+   &__container {}
+
+   // .colors__header
+   &__header {}
+
+   // .colors__body
+   &__body {}
+}
+
+.body-colors {
+
+   // .body-colors__image-hero
+   &__image {
+      width: 100%;
+      height: 100%;
+   }
+}
+
+.options-colors {
+   display: grid;
+   grid-template-columns: repeat(auto-fill,minmax(min(toRem(200),100%),1fr));
+   @include adaptiveValue('gap',95,30);
+   translate: 0 toRem(-100);
+
+   @media (max-width: toEm(1114)) {
+     translate: 0 0;
+   }
+
+   &__item {
+      position: relative;
+      aspect-ratio: 1;
+      box-shadow: 0px 15px 70px 0px rgba(162, 169, 192, 0.2);
+      border-radius: toRem(10);
+      overflow: hidden;
+   }
+
+   &__image {
+      // position: relative;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+   }
+
+   &__number {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      font-size: toRem(80);
+      font-weight: 700;
+      color: rgba(255, 255, 255, 0.6);
+      line-height: 115%; /* 92/80 */
+   }
+}
+
+// ===========================================================================================
+// -----------------------------
+// testimonials
+// -----------------------------
+.testimonials {
+
+   // .testimonials__container
+   &__container {}
+
+   // .testimonials__header
+   &__header {
+      @include adaptiveValue('margin-bottom',41,20);
+   }
+
+   // .testimonials__body
+   &__body {
+      @include adaptiveValue('margin-bottom',47,25);
+   }
+
+   &__buttons {
+      display: flex;
+      align-items: center;
+      gap: toRem(24);
+      justify-content: center;
+   }
+}
+
+.author {
+   display: flex;
+   align-items: center;
+   gap: toRem(20);
+
+   // .author__logo
+   &__logo {
+      border-radius: 50%;
+      width: toRem(48);
+      height: toRem(48);
+   }
+
+   // .author__info
+   &__info {}
+
+   // .author__name
+   &__name {
+      font-weight: 500;
+   }
+
+   // .author__prof
+   &__prof {
+      font-size: toRem(14);
+   }
+}
+

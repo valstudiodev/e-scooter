@@ -12,7 +12,7 @@ function windowLoad() {
    isMobile = { Android: function () { return navigator.userAgent.match(/Android/i); }, BlackBerry: function () { return navigator.userAgent.match(/BlackBerry/i); }, iOS: function () { return navigator.userAgent.match(/iPhone|iPad|iPod/i); }, Opera: function () { return navigator.userAgent.match(/Opera Mini/i); }, Windows: function () { return navigator.userAgent.match(/IEMobile/i); }, any: function () { return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows()); } };
    isMobile.any() ? document.body.setAttribute('data-touch', '') : null
 
-   // slidersInit();
+   slidersInit();
    scrollHeader();
    // toggleCardContent();
    // showList();
@@ -65,40 +65,42 @@ function documentActions(e) {
 // -----------------------------
 // SLIDER
 // -----------------------------
-// function slidersInit() {
-//    if (document.querySelector('.slider-review')) {
-//       const swiper = new Swiper('.slider-review', {
-//          loop: true,
-//          // slidesPerView: 2.5,
-//          // spaceBetween: 30,
+function slidersInit() {
+   if (document.querySelector('.slider-reviews')) {
+      const swiper = new Swiper('.slider-reviews', {
+         loop: true,
+         // slidesPerView: 2.5,
+         // spaceBetween: 30,
 
-//          pagination: {
-//             el: ".swiper-pagination",
-//          },
+         navigation: {
+            nextEl: '.slider-reviews__button-next',
+            prevEl: '.slider-reviews__button-prev',
+         },
 
-//          breakpoints: {
-//             320: {
-//                slidesPerView: 1.3,
-//                spaceBetween: 10,
-//             },
-//             630: {
-//                slidesPerView: 1.5,
-//                spaceBetween: 15,
-//                centteredSlides: true,
-//             },
-//             930: {
-//                slidesPerView: 2.2,
-//                spaceBetween: 25,
-//                centteredSlides: false,
-//             },
-//             1440: {
-//                slidesPerView: 2.5,
-//                spaceBetween: 30,
-//             },
-//          },
-//       });
-//    }
-// }
+         breakpoints: {
+            320: {
+               slidesPerView: 1.3,
+               spaceBetween: 10,
+            },
+            630: {
+               slidesPerView: 1.5,
+               spaceBetween: 15,
+               centteredSlides: true,
+            },
+            930: {
+               slidesPerView: 2.2,
+               spaceBetween: 25,
+               centteredSlides: false,
+            },
+            1440: {
+               slidesPerView: 3,
+               spaceBetween: 30,
+            },
+         },
+      });
+   }
+}
+
 
 // ===========================================================================================
 // -----------------------------
