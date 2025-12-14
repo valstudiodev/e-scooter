@@ -23,29 +23,29 @@ function windowLoad() {
 // -----------------------------
 // scroll-header
 // -----------------------------
-// const header = document.querySelector(`.header`)
-
-// function scrollHeader() {
-//    if (header && window.scrollY > 50) {
-//       header.classList.add('scrolled')
-//       console.log("I see header");
-//    } else {
-//       header.classList.remove('scrolled')
-//    }
-// }
-
-let lastScroll = 0;
-const header = document.querySelector(".header");
+const header = document.querySelector(`.header`)
 
 function scrollHeader() {
-   const current = window.pageYOffset;
-   if (header && current > lastScroll) {
-      header.classList.add("scrolled");
+   if (header && window.scrollY > 50) {
+      header.classList.add('scrolled')
+      console.log("I see header");
    } else {
-      header.classList.remove("scrolled");
+      header.classList.remove('scrolled')
    }
-   lastScroll = current;
 }
+
+// let lastScroll = 0;
+// const header = document.querySelector(".header");
+
+// function scrollHeader() {
+//    const current = window.pageYOffset;
+//    if (header && current > lastScroll) {
+//       header.classList.add("scrolled");
+//    } else {
+//       header.classList.remove("scrolled");
+//    }
+//    lastScroll = current;
+// }
 
 
 // ===========================================================================================
@@ -201,10 +201,6 @@ function slidersInit() {
 // -----------------------------
 // typeSwitcher form
 // -----------------------------
-// ===========================================================================================
-// -----------------------------
-// typeSwitcher form
-// -----------------------------
 // function typeSwitcher() {
 //    // Знаходимо всі інпути з класом 'type-switcher'
 //    const inputs = document.querySelectorAll('.type-switcher');
@@ -254,3 +250,46 @@ function slidersInit() {
 //       }
 //    });
 // }
+
+
+// ===========================================================================================
+// -----------------------------
+// Intersection Observer API
+// -----------------------------
+const options = {
+   root: null,
+   rootMargin: "0px 0px -10% 0px",
+   // Відсоток від розміру об'єкту.
+   // При появі якого спрацьовує подія
+   // Де 0 це будь яка поява
+   // 1 це повна поява об'кта в в'юпорті
+   threshold: 0.2,
+}
+
+const callback = (entries, observer) => {
+   entries.forEach(entry => {
+      const currentElement = entry.target
+      if (entry.isIntersecting) {
+         currentElement.classList.add('animate')
+         console.log('я тебе бачу')
+      }
+      if (currentElement.classList.contains('.item-cart')) {
+         const carts = currentElement.querySelectorAll('.item-cart')
+         carts.forEach((cart, i) => {
+            setTimeout(() => {
+               cart.classList.add('animate')
+            }, i * 200)
+         })
+      }
+   })
+}
+const observer = new IntersectionObserver(callback, options)
+
+const animElements = document.querySelectorAll('[class*="--anim"]')
+animElements.forEach(animElement => {
+   const rect = animElement.getBoundingClientRect();
+   if (rect.top < window.innerHeight && rect.bottom > 0) {
+      animElement.classList.add('animate')
+   }
+   observer.observe(animElement)
+})

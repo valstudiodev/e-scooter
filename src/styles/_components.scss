@@ -115,6 +115,13 @@
       }
    }
 
+   &--start {
+      text-transform: none;
+      font-size: toRem(20);
+      padding-block: toRem(27);
+      @include adaptiveValue('padding-inline',57,20);
+   }
+
    @media (any-hover: hover) and (any-pointer: fine) {
      &:hover {
       background-color: transparent;
@@ -231,6 +238,15 @@
    &__icon {
       width: toRem(80);
       aspect-ratio: 1;
+      animation: rotate-element 8s linear infinite;
+      transition: scale 0.3s;
+
+      @media (any-hover: hover) and (any-pointer: fine) {
+        &:hover {
+         animation-play-state: paused;
+         scale: 1.04;
+        }
+      }
    }
 }
 
@@ -307,3 +323,6 @@
 
 
 }
+
+
+
