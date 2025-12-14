@@ -7,8 +7,8 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
    <title>Start-template</title>
-  <script type="module" crossorigin src="/e-scooter/assets/main.6f80ed51.js"></script>
-  <link rel="stylesheet" href="/e-scooter/assets/index.0115bd6f.css">
+  <script type="module" crossorigin src="/e-scooter/assets/main.36097ed9.js"></script>
+  <link rel="stylesheet" href="/e-scooter/assets/index.37081e62.css">
 </head>
 
 <body>
@@ -60,7 +60,7 @@
                            <!-- <svg class="button-play__icon">
                               <use href="/src/assets/icons/play-button.svg"></use>
                            </svg> -->
-                           <img src="/e-scooter/assets/play-button.205a8306.svg" alt="">
+                           <img class="button-play__icon" src="/e-scooter/assets/play-button.205a8306.svg" alt="">
                         </button>
                      </div>
                   </div>
@@ -109,10 +109,10 @@
                   </div>
                </div>
                <div class="product__body body-product">
-                  <div class="body-product__image">
+                  <div class="body-product__image body-product__image--anim">
                      <img src="/e-scooter/assets/product-img.f5ea6f8a.webp" alt="imag eproduct scooter">
                   </div>
-                  <ul class="body-product__features features-product">
+                  <ul class="body-product__features features-product features-product--anim">
                      <li class="features-product__item features-product__item--icon-i-check">
                         <p>Lightweight aircraft grade aluminium frame</p>
                      </li>
@@ -160,7 +160,7 @@
                   <div class="accsessories__row">
                      <div class="accsessories__content accsessories__content--top">
                         <h3 class="accsessories__title">Golf Bag Rock</h3>
-                        <ul class="accsessories__list list-accsessories">
+                        <ul class="accsessories__list list-accsessories list-accsessories--anim">
                            <li class="list-accsessories__item list-accsessories__item--icon-i-check">
                               <p>Material : Aluminium alloy</p>
                            </li>
@@ -191,7 +191,7 @@
                      </div>
                      <div class="accsessories__content accsessories__content--bottom">
                         <h3 class="accsessories__title">Shopping Rack</h3>
-                        <ul class="accsessories__list list-accsessories">
+                        <ul class="accsessories__list list-accsessories list-info--anim">
                            <li class="list-accsessories__item list-accsessories__item--icon-i-check">
                               <p>Material : Aluminium alloy</p>
                            </li>
@@ -436,6 +436,23 @@
                   <button class="slider-reviews__button-prev buttom-arrow buttom-arrow--icon-arrow-bt"></button>
                   <button
                      class="slider-reviews__button-next buttom-arrow buttom-arrow--right buttom-arrow--icon-arrow-bt"></button>
+               </div>
+            </div>
+         </section>
+
+         <section class="page__subscribe subscribe">
+            <div class="subscribe__container">
+               <div class="subscribe__header block-header">
+                  <h2 class="block-header__title">Subscribe To Newsletter</h2>
+                  <div class="block-header__text">
+                     <p>Subscribe to our newsletter to get amazing offers in future.</p>
+                  </div>
+               </div>
+               <div class="subscribe__body">
+                  <form action="#" class="subscribe__form form-subscribe">
+                     <input required type="email" class="form-subscribe__input" placeholder="Enter your email."></input>
+                     <button class="form-subscribe__button button-active button-active--start">Get start</button>
+                  </form>
                </div>
             </div>
          </section>
