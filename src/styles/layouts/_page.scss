@@ -7,10 +7,10 @@
 // Page
 // -----------------------------
 .page {
-
-   // > *:not(.subscribe) {
-   //    display: none;
-   // }
+   // display: none;
+   > *:not(.hero,.parameters,.product,.motor,.accsessories,.gallery,.colors,.testimonials,.subscribe) {
+      display: none;
+   }
 
    // .page__hero
    &__hero {
@@ -194,18 +194,6 @@
       padding-block: toRem(30);
       @include adaptiveValue('gap',58,15);
 
-
-      // &.animate {
-      //    .parameters__item {
-      //       animation: fadeShow 0.6s ease forwards;
-      //    }
-      //    @for $i from 1 through 10 {
-      //       .parameters__item:nth-child(#{$i}) {
-      //          animation-delay: #{0.2s * $i};
-      //       }
-      //    }
-      // }
-
       &.animate {
          .parameters__item {
             animation: fadeShow 0.6s ease forwards;
@@ -255,12 +243,7 @@
 // product
 // -----------------------------
 .product {
-   opacity: 0;
-   transition: opacity 1s ease;
 
-   &.animate {
-      opacity: 1;
-   }
    // .product__container
    &__container {}
 
@@ -350,12 +333,7 @@
 // motor
 // -----------------------------
 .motor {
-   opacity: 0;
-   transition: opacity 1s ease;
 
-   &.animate {
-      opacity: 1;
-   }
    // .motor__container
    &__container {}
 
@@ -365,6 +343,12 @@
    &__image {
       width: 100%;
       height: 100%;
+      opacity: 0;
+      transition: opacity 0.6s ease;
+
+      &.animate {
+         opacity: 1;
+      }
    }
 }
 
@@ -373,12 +357,7 @@
 // accsessories
 // -----------------------------
 .accsessories {
-   opacity: 0;
-   transition: opacity 1s ease;
 
-   &.animate {
-      opacity: 1;
-   }
    // .accsessories__container
    &__container {}
 
@@ -394,6 +373,7 @@
 
    &__body {
       display: grid;
+      overflow-x: hidden;
 
       > * {
          @include adaptiveValue('margin-bottom',112,50);
@@ -405,8 +385,6 @@
 
    // .accsessories__row
    &__row {
-      // display: flex;
-      // align-items: center;
       display: grid;
       grid-template-columns: repeat(auto-fill,minmax(min(toRem(340),100%),1fr));
       gap: toRem(20);
@@ -421,7 +399,6 @@
       display: flex;
       flex-direction: column;
       @include adaptiveValue('gap',33,10);
-      flex: 1 1 33.333%;
 
       &--top {}
 
@@ -442,19 +419,18 @@
 
    // .accsessories__image
    &__image {
-      flex: 1 1 33.333%;
       aspect-ratio: 1;
 
       img {
          width: 100%;
          height: 100%;
-         object-fit: contain;
+         object-fit: cover;
       }
       // .accsessories__image--scooter
       &--scooter {
          opacity: 0;
-         translate: 80% 0;
-         transition: translate 1s ease;
+         transition: opacity 1s ease,translate 1s ease;
+         translate: 75% 0;
          &.animate {
             opacity: 1;
             translate: 0 0;
@@ -463,12 +439,12 @@
 
       &--multi {
          opacity: 0;
-         translate: 100% 0;
-         transition: translate 0.6s ease;
+         transition: opacity 0.6s ease, translate 0.6s ease;
+         translate: 75% 0;
 
          &.animate {
             opacity: 1;
-            translate:0 0;
+            translate: 0 0;
          }
       }
 
@@ -476,9 +452,9 @@
          width: toRem(240);
          height: toRem(210);
          align-self: end;
-         translate: 30% 0;
          opacity: 0;
-         transition: translate 0.6s ease;
+         transition: opacity 0.6s ease,translate 0.6s ease;
+         translate: -80% 0;
          &.animate {
             opacity: 1;
             translate: 0 0;
@@ -490,8 +466,8 @@
 
       &--trunk {
          opacity: 0;
-         translate: -80% 0;
-         transition: translate 1.3s ease;
+         translate: -75% 0;
+         transition: opacity 1s ease,translate 1s ease;
          &.animate {
             opacity: 1;
             translate: 0 0;
@@ -544,12 +520,7 @@
 // gallery
 // -----------------------------
 .gallery {
-   opacity: 0;
-   transition: opacity 1s ease;
 
-   &.animate {
-      opacity: 1;
-   }
    // .gallery__container
    &__container {}
 
@@ -637,12 +608,7 @@
 // colors
 // -----------------------------
 .colors {
-   opacity: 0;
-   transition: opacity 1s ease;
 
-   &.animate {
-      opacity: 1;
-   }
    // .colors__container
    &__container {}
 
@@ -654,18 +620,27 @@
 }
 
 .body-colors {
-
+      display: grid;
+      overflow-x: hidden;
    // .body-colors__image-hero
    &__image {
-      width: 100%;
-      height: 100%;
+      aspect-ratio: 1800 / 873;
       opacity: 0;
-      translate: 80% 0;
-      transition: translate 0.8s ease;
+      // translate: 80% 0;
+      will-change: transform;
+      transform: translateX(70%);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+
+      img {
+         width: 100%;
+         height: 100%;
+         object-fit: contain;
+      }
 
       &.animate {
          opacity: 1;
-         translate: 0 0;
+         // translate: 0 0;
+         transform: translateX(0);
       }
    }
 }
@@ -731,12 +706,6 @@
 // testimonials
 // -----------------------------
 .testimonials {
-   opacity: 0;
-   transition: opacity 1s ease;
-
-   &.animate {
-      opacity: 1;
-   }
 
    // .testimonials__container
    &__container {}
@@ -749,6 +718,12 @@
    // .testimonials__body
    &__body {
       @include adaptiveValue('margin-bottom',47,25);
+      opacity: 0;
+      transition: opacity 0.6s ease;
+
+      &.animate {
+         opacity: 1;
+      }
    }
 
    &__buttons {
@@ -790,12 +765,7 @@
 // subscribe
 // -----------------------------
 .subscribe {
-   opacity: 0;
-   transition: opacity 1s ease;
 
-   &.animate {
-      opacity: 1;
-   }
    // .subscribe__container
    &__container {}
 
@@ -805,7 +775,14 @@
    }
 
    // .subscribe__body
-   &__body {}
+   &__body {
+      opacity: 0;
+      transition: opacity 0.6s ease;
+
+      &.animate {
+         opacity: 1;
+      }
+   }
 
    // .subscribe__form
    &__form {}

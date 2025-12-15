@@ -25,6 +25,7 @@ body {
    line-height: 1.5;
    color: $colorPrimiry;
    background-color: $colorWhite;
+   overflow-x: hidden;
 
    &.scroll-lock {
       overflow: hidden;

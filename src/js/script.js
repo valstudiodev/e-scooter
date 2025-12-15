@@ -28,7 +28,6 @@ const header = document.querySelector(`.header`)
 function scrollHeader() {
    if (header && window.scrollY > 50) {
       header.classList.add('scrolled')
-      console.log("I see header");
    } else {
       header.classList.remove('scrolled')
    }
@@ -258,7 +257,7 @@ function slidersInit() {
 // -----------------------------
 const options = {
    root: null,
-   rootMargin: "0px 0px -10% 0px",
+   rootMargin: "0px 0px 0px 0px",
    // Відсоток від розміру об'єкту.
    // При появі якого спрацьовує подія
    // Де 0 це будь яка поява
