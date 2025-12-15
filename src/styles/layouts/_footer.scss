@@ -60,8 +60,10 @@
       justify-content: space-between;
       @include adaptiveValue('column-gap',50, 20);
       row-gap: toRem(20);
-      width: 100%;
 
+      @media (max-width: toEm(890)) {
+         width: 100%;
+      }
       @media (max-width: toEm(470)) {
         flex-direction: column;
         align-items: center;
@@ -106,19 +108,26 @@
 .menu-footer {
    display: flex;
    flex-direction: column;
-   gap: toRem(35);
+   align-items: center;
+   @include adaptiveValue('gap',35,20);
+
+
    // .menu-footer__title
    &__title {
       color: $white;
       @include adaptiveValue('font-size', 22, 18);
       font-weight: 700;
+      display: flex;
+      flex-direction: row-reverse;
+      gap: toRem(30);
+      align-items: center;
    }
 
    // .menu-footer__list
    &__list {
       display: flex;
       flex-direction: column;
-      gap: toRem(30);
+      @include adaptiveValue('gap',30,15);
    }
 
    // .menu-footer__item

@@ -8,9 +8,9 @@
 // -----------------------------
 .page {
    // display: none;
-   > *:not(.hero,.parameters,.product,.motor,.accsessories,.gallery,.colors,.testimonials,.subscribe) {
-      display: none;
-   }
+   // > *:not(.hero) {
+   //    display: none;
+   // }
 
    // .page__hero
    &__hero {
@@ -412,6 +412,14 @@
 
    &__button {
       justify-self: center;
+      opacity: 0;
+      translate: -80% 0;
+      transition: opacity 1.5s ease, translate 1.5s ease;
+
+      &.animate {
+         opacity: 1;
+         translate: 0 0;
+      }
    }
 
    // .accsessories__list

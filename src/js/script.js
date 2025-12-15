@@ -15,7 +15,7 @@ function windowLoad() {
    slidersInit();
    scrollHeader();
    // toggleCardContent();
-   // showList();
+   showList();
    // typeSwitcher();
 }
 
@@ -72,8 +72,8 @@ function slidersInit() {
          // spaceBetween: 30,
 
          navigation: {
-            nextEl: '.slider-reviews__button-next',
-            prevEl: '.slider-reviews__button-prev',
+            nextEl: '.buttons-testimonials__btn-next',
+            prevEl: '.buttons-testimonials__btn-prev',
          },
 
          breakpoints: {
@@ -182,11 +182,11 @@ function slidersInit() {
 
 
 // function showList() {
-//    const items = document.querySelectorAll('.row-menu');
+//    const items = document.querySelectorAll('.menu-footer');
 
 //    items.forEach(item => {
-//       const icon = item.querySelector('.row-menu__icon');
-//       const wrap = item.querySelector('.row-menu__wrap');
+//       const icon = item.querySelector('.menu-footer__title--icon-arrow-bt');
+//       const wrap = item.querySelector('.menu-footer__list');
 
 //       icon.addEventListener('click', () => {
 //          icon.classList.toggle('icon-active');
@@ -194,6 +194,65 @@ function slidersInit() {
 //       });
 //    });
 // }
+
+// function showList() {
+//    const items = document.querySelectorAll('.menu-footer');
+
+//    items.forEach(item => {
+//       const icon = item.querySelector('.menu-footer__title--icon-arrow-bt');
+//       const wrap = item.querySelector('.menu-footer__list');
+
+//       // Встановлюємо початковий стан CSS, щоб список був закритий,
+//       // якщо він не має класу 'open' відразу.
+//       wrap.style.height = '0';
+//       wrap.style.overflow = 'hidden';
+
+//       icon.addEventListener('click', () => {
+//          // 1. Анімація стрілки
+//          icon.classList.toggle('icon-active');
+
+//          // 2. Логіка Акордеона
+//          if (wrap.classList.contains('open')) {
+//             // --- ЗГОРТАННЯ ---
+
+//             // Це потрібно, щоб браузер почав анімувати з поточної висоти,
+//             // а не з фактичної висоти контенту (scrollHeight).
+//             wrap.style.height = wrap.scrollHeight + 'px';
+
+//             // Невеликий тайм-аут для забезпечення перемальовування браузером
+//             // перед початком анімації (від поточної висоти до 0).
+//             setTimeout(() => {
+//                wrap.style.height = '0';
+//             }, 10);
+
+//             wrap.classList.remove('open');
+//          } else {
+//             // --- РОЗКРИТТЯ ---
+
+//             wrap.classList.add('open');
+//             // Встановлюємо висоту, що дорівнює вмісту (запустить анімацію)
+//             wrap.style.height = wrap.scrollHeight + 'px';
+
+//             // Додатково: Після завершення анімації встановлюємо height: auto,
+//             // щоб контент міг далі адаптуватися, якщо його розмір зміниться.
+//             // Час має відповідати тривалості CSS-transition.
+//             wrap.addEventListener('transitionend', function handler() {
+//                // Якщо список відкрито, встановлюємо auto для гнучкості
+//                if (wrap.classList.contains('open')) {
+//                   wrap.style.height = 'auto';
+//                }
+//                wrap.removeEventListener('transitionend', handler);
+//             });
+//          }
+//       });
+//    });
+// }
+
+
+
+
+
+
 
 
 // ===========================================================================================

@@ -164,7 +164,7 @@
    }
 }
 
-.buttom-arrow  {
+.button-arrow  {
    border: toRem(1) solid $colorPrimiry;
    border-radius: 50%;
    padding-block: toRem(17);
@@ -238,8 +238,8 @@
    &__icon {
       width: toRem(80);
       aspect-ratio: 1;
-      animation: rotate-element 8s linear infinite;
-      transition: scale 0.3s;
+      animation: rotate-element 30s linear infinite;
+      transition: scale 0.5s;
 
       @media (any-hover: hover) and (any-pointer: fine) {
         &:hover {
@@ -265,8 +265,6 @@
    &.animate {
       opacity: 1;
    }
-
-
 
    // .block-header__title
    &__title {
