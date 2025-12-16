@@ -1,6 +1,13 @@
 @use '../settings/settings' as *;
 @use '../settings/mixins' as *;
 
+[data-accordion].active {
+   .menu-footer__title {
+      &::before {
+         rotate: 270deg;
+      }
+   }
+}
 
 .footer {
    // display: none;
@@ -108,8 +115,13 @@
 .menu-footer {
    display: flex;
    flex-direction: column;
-   align-items: center;
+   align-items: flex-start;
    @include adaptiveValue('gap',35,20);
+
+   @media (max-width: toEm(470)) {
+      align-items: center;
+
+   }
 
 
    // .menu-footer__title
@@ -121,13 +133,36 @@
       flex-direction: row-reverse;
       gap: toRem(30);
       align-items: center;
+
+      &::before {
+         font-size: toRem(12);
+         rotate: 90deg;
+         transition: rotate 0.3s ease;
+      }
+
+      @media (min-width: toEm(471)) {
+        &::before {
+         display: none;
+        }
+      }
    }
 
    // .menu-footer__list
    &__list {
       display: flex;
       flex-direction: column;
-      @include adaptiveValue('gap',30,15);
+      @include adaptiveValue('gap',30,20);
+      transition: height 0.3s ease;
+      will-change: height;
+
+      @media (max-width: toEm(470)) {
+        height: 0;
+        overflow: hidden;
+      }
+      @media (min-width: toEm(471)) {
+        height: auto !important;
+        overflow: visible;
+      }
    }
 
    // .menu-footer__item

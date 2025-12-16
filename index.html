@@ -55,15 +55,23 @@
                                  video how
                                  it works</p>
                            </div>
-                           <!-- <svg class="button-play__icon">
-                              <use href="/src/assets/icons/play-button.svg"></use>
-                           </svg> -->
                            <img class="button-play__icon" src="/src/assets/icons/play-button.svg" alt="">
                         </button>
                      </div>
                   </div>
-                  <div class="hero__image">
-                     <img src="/src/assets/img/image/hero-img.webp" alt="hero image bike">
+                  <div class="hero__right">
+                     <div class="hero__image">
+                        <img src="/src/assets/img/image/hero-img.webp" alt="hero image bike">
+                     </div>
+                     <div class="hero__accent accent-hero">
+                        <img class="accent-hero__icon" src="/src/assets/icons/01.svg" alt="image 01">
+                        <div class="accent-hero__buttons buttons-slide">
+                           <button type="button"
+                              class="buttons-slide__arrow buttons-slide__arrow--left buttons-slide__arrow--icon-i-chevron"></button>
+                           <button type="button"
+                              class="buttons-slide__arrow buttons-slide__arrow--right buttons-slide__arrow--icon-i-chevron"></button>
+                        </div>
+                     </div>
                   </div>
                </div>
             </div>
@@ -465,9 +473,9 @@
                   <img src="/src/assets/img/image/footer-img.webp" alt="bike image">
                </div>
                <div class="footer__menu">
-                  <div class="footer__column menu-footer">
-                     <h3 class="menu-footer__title">About</h3>
-                     <ul class="menu-footer__list">
+                  <div class="footer__column menu-footer" data-accordion>
+                     <h3 class="menu-footer__title menu-footer__title--icon-i-chevron" data-accordion-btn>About</h3>
+                     <ul class="menu-footer__list" data-accordion-body>
                         <li class="menu-footer__item">
                            <a href="#" class="menu-footer__link">Company</a>
                         </li>
@@ -482,9 +490,9 @@
                         </li>
                      </ul>
                   </div>
-                  <div class="footer__column menu-footer">
-                     <h3 class="menu-footer__title">Resources</h3>
-                     <ul class="menu-footer__list">
+                  <div class="footer__column menu-footer" data-accordion>
+                     <h3 class="menu-footer__title menu-footer__title--icon-i-chevron" data-accordion-btn>Resources</h3>
+                     <ul class="menu-footer__list" data-accordion-body>
                         <li class="menu-footer__item">
                            <a href="#" class="menu-footer__link">Contact</a>
                         </li>
@@ -496,9 +504,9 @@
                         </li>
                      </ul>
                   </div>
-                  <div class="footer__column menu-footer">
-                     <h3 class="menu-footer__title">Legals</h3>
-                     <ul class="menu-footer__list">
+                  <div class="footer__column menu-footer" data-accordion>
+                     <h3 class="menu-footer__title menu-footer__title--icon-i-chevron" data-accordion-btn>Legals</h3>
+                     <ul class="menu-footer__list" data-accordion-body>
                         <li class="menu-footer__item">
                            <a href="#" class="menu-footer__link">Copyright Privacy</a>
                         </li>

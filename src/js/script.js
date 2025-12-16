@@ -14,8 +14,9 @@ function windowLoad() {
 
    slidersInit();
    scrollHeader();
+   setupAccordions();
    // toggleCardContent();
-   showList();
+   // showList();
    // typeSwitcher();
 }
 
@@ -249,6 +250,47 @@ function slidersInit() {
 // }
 
 
+const accordions = document.querySelectorAll('[data-accordion]');
+const mq = window.matchMedia('(max-width: 471px)');
+
+function setupAccordions() {
+   accordions.forEach(item => {
+      const btn = item.querySelector('[data-accordion-btn]');
+      const body = item.querySelector('[data-accordion-body]');
+      if (!btn || !body) return;
+
+      if (!mq.matches) {
+         item.classList.remove('active');
+         body.style.height = '';
+         return;
+      }
+
+      body.style.height = item.classList.contains('active')
+         ? body.scrollHeight + 'px'
+         : '0px';
+
+      btn.onclick = () => {
+         const isOpen = item.classList.contains('active');
+
+         if (isOpen) {
+            body.style.height = body.scrollHeight + 'px';
+            requestAnimationFrame(() => body.style.height = '0px');
+            item.classList.remove('active');
+         } else {
+            item.classList.add('active');
+            body.style.height = body.scrollHeight + 'px';
+
+            body.addEventListener('transitionend', () => {
+               body.style.height = 'auto';
+            }, { once: true });
+         }
+      };
+   });
+   mq.addEventListener('change', setupAccordions);
+}
+
+
+
 
 
 
@@ -329,7 +371,6 @@ const callback = (entries, observer) => {
       const currentElement = entry.target
       if (entry.isIntersecting) {
          currentElement.classList.add('animate')
-         console.log('я тебе бачу')
       }
       if (currentElement.classList.contains('.item-cart')) {
          const carts = currentElement.querySelectorAll('.item-cart')

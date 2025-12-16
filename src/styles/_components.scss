@@ -250,6 +250,49 @@
    }
 }
 
+.buttons-slide {
+   display: inline-flex;
+   align-items: center;
+
+   // .hero-buttons__arrow
+   &__arrow {
+      display: flex;
+      align-items: center;
+      border: toRem(1) solid $colorPrimiry;
+      padding-block: toRem(18);
+      padding-inline: toRem(25);
+      transition: all 0.3s;
+
+      &::before {
+         color: $black;
+         transition: color 0.3s;
+      }
+
+      // .hero-buttons__arrow--icon-i-chevron
+      &--icon-i-chevron {}
+
+      // .hero-buttons__arrow--right
+      &--right {
+         rotate: 180deg;
+         border-radius: toRem(30) toRem(0) toRem(0) toRem(30);
+         translate: toRem(-1) 0;
+      }
+
+      &--left {
+         border-radius: toRem(30) toRem(0) toRem(0) toRem(30);
+      }
+
+      @media (any-hover: hover) and (any-pointer: fine) {
+        &:hover {
+         background-color: $colorPrimiry;
+         &::before {
+            color: $white;
+         }
+        }
+      }
+   }
+}
+
 // ===========================================================================================
 // -----------------------------
 // Block

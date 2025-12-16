@@ -72,19 +72,6 @@
    // .hero__container
    &__container {
       position: relative;
-
-      // &::before {
-      //   content: "";
-      //   position: absolute;
-      //   top: 50%;
-      //   translate: 0 -50%;
-      //   right: 0;
-      //   width: 35%;
-      //   height: 70%;
-      //   background-color: $bgAccent;
-      //   z-index: -1;
-      //   border-radius: toRem(300) toRem(0) toRem(0) toRem(300);
-      // }
    }
 
    // .hero__inner
@@ -92,17 +79,25 @@
       display: grid;
       grid-template-columns: repeat(auto-fill,minmax(min(toRem(500),100%),1fr));
       gap: toRem(20);
-
-      @media (max-width: toEm(685)) {
-      //   flex-direction: column;
-      //   gap: toRem(20);
-      }
    }
 
    // .hero__content
    &__content {
       // flex: 1 1 45%;
       @include adaptiveValue('padding-block',50,20);
+   }
+
+   &__right {
+      display: flex;
+      flex-direction: column;
+   }
+
+   &__buttons {
+
+   }
+
+   &__accent {
+      align-self: flex-end;
    }
 
    // .hero__image
@@ -119,8 +114,8 @@
          top: 50%;
          translate: 0 -50%;
          right: 0;
-         width: 65%;
-         height: 60%;
+         width: 62%;
+         height: 85%;
          background-color: $bgAccent;
          z-index: -1;
          border-radius: toRem(300) toRem(0) toRem(0) toRem(300);
@@ -132,6 +127,23 @@
          object-fit: contain;
          // object-position: left;
       }
+   }
+}
+
+.accent-hero {
+   display: flex;
+   align-items: center;
+   gap: toRem(38);
+
+   &__buttons {}
+
+   &__icon {
+      @include adaptiveValue('width',173,90);
+   }
+
+   &__number {
+      font-family: "Calistoga",sans-serif;
+      font-size: toRem(150);
    }
 }
 
