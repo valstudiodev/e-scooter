@@ -49,3 +49,10 @@ body {
    padding-inline: toRem(math.div($containerPadding, 2));
    margin: 0 auto;
 }
+
+html[data-input="keyboard"] {
+   >* :focus-visible {
+      outline: toRem(2) solid $colorDark;
+      outline-offset: toRem(4);
+   }
+}

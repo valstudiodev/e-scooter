@@ -11,7 +11,6 @@
    z-index: 100;
    padding-block: toRem(27);
    transition: all 0.3s;
-   // background-color: lightgray;
 
 
    &::before {
@@ -19,8 +18,6 @@
       position: absolute;
       top: 0;
       left: 0;
-      // background-color: rgba(26, 30, 35, 0.2);
-      // background-color: $bgAccent;
       background-color: $white;
       backdrop-filter: blur(10px);
       width: 100%;
@@ -33,10 +30,6 @@
          background: rgba(250, 250, 250, 0.2);
          backdrop-filter: blur(20px);
       }
-   }
-
-   &.scrolled {
-      // translate: 0 -100%;
    }
 
    // .header__container
@@ -129,11 +122,9 @@
    // .menu-header__link
    &__link {
       transition: all 0.3s;
-      @media (any-hover: hover) and (any-pointer: fine) {
-        &:hover {
-            color: $colorAccent;
-            text-shadow: 0 3px 8px rgba(0, 0, 0, 0.8);
-        }
+      @include hover {
+         color: $colorAccent;
+         text-shadow: 0 3px 8px rgba(0, 0, 0, 0.8);
       }
    }
 }

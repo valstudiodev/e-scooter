@@ -240,11 +240,9 @@ address {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
-@media (any-hover: hover) and (any-pointer: fine) {
-  .menu-header__link:hover {
-    color: rgb(113, 129, 118);
-    text-shadow: 0 3px 8px rgba(0, 0, 0, 0.8);
-  }
+html[data-input=mouse] .menu-header__link:hover {
+  color: rgb(113, 129, 118);
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.8);
 }
 
 [data-accordion].active .menu-footer__title::before {
@@ -385,10 +383,8 @@ address {
   -webkit-transition: width 0.3s;
   transition: width 0.3s;
 }
-@media (any-hover: hover) and (any-pointer: fine) {
-  .footer__copyrigth:hover::after {
-    width: 100%;
-  }
+html[data-input=mouse] .footer__copyrigth:hover::after {
+  width: 100%;
 }
 
 .menu-footer {
@@ -512,11 +508,9 @@ address {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
-@media (any-hover: hover) and (any-pointer: fine) {
-  .menu-footer__link:hover {
-    color: rgb(113, 129, 118);
-    text-shadow: 0 3px 8px rgba(0, 0, 0, 0.8);
-  }
+html[data-input=mouse] .menu-footer__link:hover {
+  color: rgb(113, 129, 118);
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.8);
 }
 .social-media {
   display: -webkit-box;
@@ -547,13 +541,11 @@ address {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
-@media (any-hover: hover) and (any-pointer: fine) {
-  .social-media__link:hover {
-    background-color: rgb(113, 129, 118);
-    -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.8);
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.8);
-    color: #fff;
-  }
+html[data-input=mouse] .social-media__link:hover {
+  background-color: rgb(113, 129, 118);
+  -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, 0.8);
+          box-shadow: 0 3px 8px rgba(0, 0, 0, 0.8);
+  color: #fff;
 }
 
 @media (min-width: 85.625em) {
@@ -2475,11 +2467,9 @@ address {
     padding-inline: 20px;
   }
 }
-@media (any-hover: hover) and (any-pointer: fine) {
-  .button-active:hover {
-    background-color: transparent;
-    color: rgb(66, 69, 74);
-  }
+html[data-input=mouse] .button-active:hover {
+  background-color: transparent;
+  color: rgb(66, 69, 74);
 }
 
 .button {
@@ -2521,11 +2511,9 @@ address {
     padding-block: 18px;
   }
 }
-@media (any-hover: hover) and (any-pointer: fine) {
-  .button:hover {
-    background-color: rgb(66, 69, 74);
-    color: #fff;
-  }
+html[data-input=mouse] .button:hover {
+  background-color: rgb(66, 69, 74);
+  color: #fff;
 }
 @media (min-width: 85.625em) {
   .button--more {
@@ -2613,11 +2601,9 @@ address {
 .button-arrow--right {
   rotate: 180deg;
 }
-@media (any-hover: hover) and (any-pointer: fine) {
-  .button-arrow:hover {
-    background-color: rgb(66, 69, 74);
-    color: #fff;
-  }
+html[data-input=mouse] .button-arrow:hover {
+  background-color: rgb(66, 69, 74);
+  color: #fff;
 }
 
 .button-buy {
@@ -2658,15 +2644,13 @@ address {
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
-@media (any-hover: hover) and (any-pointer: fine) {
-  .button-buy:hover {
-    background-color: rgba(211, 211, 211, 0.74);
-  }
-  .button-buy:hover::before {
-    background-color: rgb(29, 31, 34);
-    -webkit-animation: arrowMove 0.6s ease-in-out infinite;
-            animation: arrowMove 0.6s ease-in-out infinite;
-  }
+html[data-input=mouse] .button-buy:hover {
+  background-color: rgba(211, 211, 211, 0.74);
+}
+html[data-input=mouse] .button-buy:hover::before {
+  background-color: rgb(29, 31, 34);
+  -webkit-animation: arrowMove 0.6s ease-in-out infinite;
+          animation: arrowMove 0.6s ease-in-out infinite;
 }
 
 .button-play {
@@ -2706,12 +2690,10 @@ address {
   -webkit-transition: scale 0.5s;
   transition: scale 0.5s;
 }
-@media (any-hover: hover) and (any-pointer: fine) {
-  .button-play__icon:hover {
-    -webkit-animation-play-state: paused;
-            animation-play-state: paused;
-    scale: 1.04;
-  }
+html[data-input=mouse] .button-play__icon:hover {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+  scale: 1.04;
 }
 
 .buttons-slide {
@@ -2748,13 +2730,11 @@ address {
 .buttons-slide__arrow--left {
   border-radius: 1.875rem 0rem 0rem 1.875rem;
 }
-@media (any-hover: hover) and (any-pointer: fine) {
-  .buttons-slide__arrow:hover {
-    background-color: rgb(66, 69, 74);
-  }
-  .buttons-slide__arrow:hover::before {
-    color: #fff;
-  }
+html[data-input=mouse] .buttons-slide__arrow:hover {
+  background-color: rgb(66, 69, 74);
+}
+html[data-input=mouse] .buttons-slide__arrow:hover::before {
+  color: #fff;
 }
 
 .block-header {
@@ -2971,4 +2951,9 @@ body.scroll-lock {
   max-width: 85.625rem;
   padding-inline: 0.9375rem;
   margin: 0 auto;
+}
+
+html[data-input=keyboard] > * :focus-visible {
+  outline: 0.125rem solid rgb(23, 24, 26);
+  outline-offset: 0.25rem;
 }

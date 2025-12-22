@@ -12,7 +12,6 @@
 .footer {
    // display: none;
    background-color: $colorPrimiry;
-   // @include adaptiveValue('padding-top',100,50);
 
 
    // .footer__container
@@ -53,7 +52,6 @@
       }
 
       @media (max-width: toEm(890)) {
-      //   translate: 0 0;
         &.animate {
          translate: 0 0;
         }
@@ -102,12 +100,10 @@
         transition: width 0.3s;
       }
 
-      @media (any-hover: hover) and (any-pointer: fine) {
-        &:hover {
+      @include hover {
          &::after {
             width: 100%;
          }
-        }
       }
    }
 }
@@ -120,9 +116,7 @@
 
    @media (max-width: toEm(470)) {
       align-items: center;
-
    }
-
 
    // .menu-footer__title
    &__title {
@@ -173,12 +167,9 @@
    // .menu-footer__link
    &__link {
       transition: all 0.3s;
-      @media (any-hover: hover) and (any-pointer: fine) {
-        &:hover {
-         //  color: $colorDark;
-          color: $colorAccent;
-          text-shadow: 0 3px 8px rgba(0, 0, 0, 0.8);
-        }
+      @include hover {
+         color: $colorAccent;
+         text-shadow: 0 3px 8px rgba(0, 0, 0, 0.8);
       }
    }
 
@@ -192,11 +183,6 @@
    flex-wrap: wrap;
    gap: toRem(16);
 
-   // .social-media__item
-   &__item {
-
-   }
-
    // .social-media__link
    &__link {
       background-color: $white;
@@ -209,13 +195,10 @@
       align-items: center;
       transition: all 0.3s;
 
-      @media (any-hover: hover) and (any-pointer: fine) {
-        &:hover {
+      @include hover {
          background-color: $colorAccent;
          box-shadow: 0 3px 8px rgba(0, 0, 0, 0.8);
          color: $white;
-        }
       }
-
    }
 }
