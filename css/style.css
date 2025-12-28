@@ -237,12 +237,28 @@ address {
   }
 }
 .menu-header__link {
+  position: relative;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 }
+.menu-header__link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  translate: -50% 0;
+  width: 0;
+  height: 0.125rem;
+  background-color: rgb(113, 129, 118);
+  -webkit-transition: width 0.3s;
+  transition: width 0.3s;
+}
 html[data-input=mouse] .menu-header__link:hover {
   color: rgb(113, 129, 118);
-  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.8);
+  text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.8);
+}
+html[data-input=mouse] .menu-header__link:hover::after {
+  width: 100%;
 }
 
 [data-accordion].active .menu-footer__title::before {
@@ -2442,10 +2458,8 @@ html[data-input=mouse] .social-media__link:hover {
   border: 0.0625rem solid #fff;
   color: rgb(66, 69, 74);
 }
-@media (any-hover: hover) and (any-pointer: fine) {
-  .button-active--login:hover {
-    text-decoration: underline;
-  }
+html[data-input=mouse] .button-active--login:hover {
+  text-decoration: underline;
 }
 .button-active--start {
   text-transform: none;

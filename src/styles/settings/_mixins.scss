@@ -9,7 +9,6 @@
 }
 
 @mixin tap {
-
    html[data-input="touch"] &,
    html[data-input="pen"] & {
       &:active {

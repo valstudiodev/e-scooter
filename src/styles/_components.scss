@@ -108,10 +108,9 @@
       background-color: transparent;
       border: toRem(1) solid $white;
       color: $colorPrimiry;
-      @media (any-hover: hover) and (any-pointer: fine) {
-        &:hover {
-         text-decoration: underline;
-        }
+
+      @include hover {
+        text-decoration: underline;
       }
    }
 

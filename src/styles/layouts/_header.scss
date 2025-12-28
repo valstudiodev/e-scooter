@@ -121,10 +121,28 @@
 
    // .menu-header__link
    &__link {
+      position: relative;
       transition: all 0.3s;
+
+      &::after {
+         content: "";
+         position: absolute;
+         bottom: 0;
+         left: 50%;
+         translate: -50% 0;
+         width: 0;
+         height: toRem(2);
+         background-color: $colorAccent;
+         transition: width 0.3s;
+      }
+
       @include hover {
          color: $colorAccent;
-         text-shadow: 0 3px 8px rgba(0, 0, 0, 0.8);
+         text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.8);
+
+         &::after {
+            width: 100%;
+         }
       }
    }
 }
